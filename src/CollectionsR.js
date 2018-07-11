@@ -7,45 +7,30 @@ import TasksTodo from './Taskstodo';
 
 const CollectionsRoute = props => (
   <div>
-    <CollectionsList
-      collections
-      chooseCollection={this.props.chooseCollection}
-      addCollection={props.addCollection}
-    />
-
     <Route
       exact
       path="/"
       render={routeProps => (
-        <TasksTodo
+        <CollectionsList
           {...routeProps}
-          tasks={props.tasks}
-          collections={props.collections}
-          addTask={props.addTask}
-          doTask={props.doTask}
-          toDo={props.toDo}
+          collectionsList={props.collectionsList}
           displayTasks={props.displayTasks}
-          addCollection={props.addCollection}
-          chooseCollection={props.chooseCollection}
         />
       )}
     />
 
     <Route
-      path="/c/:collectionId"
+      path="/c/:collection  collectionId={this.state.collectionId}Id"
       render={routeProps => (
-        <TasksTodo
+        <CollectionsList
           {...routeProps}
-          tasks={props.tasks}
-          collections={props.collections}
-          addTask={props.addTask}
-          doTask={props.doTask}
-          toDo={props.toDo}
+          collectionsList={props.collectionsList}
           displayTasks={props.displayTasks}
-          addCollection={props.addCollection}
-          chooseCollection={props.chooseCollection}
         />
       )}
+    />
+    <TasksTodo
+      handleSubmit={props.addTask}
     />
 
   </div>

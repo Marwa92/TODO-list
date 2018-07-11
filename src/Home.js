@@ -7,6 +7,7 @@ import Header from './Header';
 import CollectionsList from './CollectionsList';
 import TasksTodo from './Taskstodo';
 import BE from './BE';
+import CollectionsRoute from './CollectionsR';
 
 
 class Home extends Component {
@@ -22,8 +23,6 @@ class Home extends Component {
     this.doTask = this.doTask.bind(this);
     this.toDo = this.toDo.bind(this);
     this.displayTasks = this.displayTasks.bind(this);
-    // this.addCollection = this.addCollection.bind(this);
-    // this.chooseCollection = this.chooseCollection.bind(this);
   }
 
   // collectionsList = response
@@ -115,11 +114,12 @@ class Home extends Component {
     return (
       <div className="Home" style={{ width: '75%', margin: 'auto' }}>
         <Header />
-        <CollectionsList
-          collectionsList={this.state.collections}
+        <CollectionsRoute
+          collectionsList={this.state.collections}value
           displayTasks={this.displayTasks}
+          addTask={this.addTask}
+          collectionId={this.state.collectionId}
         />
-        <TasksTodo handleSubmit={this.addTask} />
         <Table className="table" textAlign="center" style={{ backgroundColor: 'white' }}>
           <Table.Header>
             <Table.Row>
