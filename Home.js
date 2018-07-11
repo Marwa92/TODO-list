@@ -3,7 +3,9 @@ import './App.css';
 import { Table, Button } from 'semantic-ui-react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Header from './Header';
-import FormBox from './FormBox';
+// import FormBox from './FormBox';
+import CollectionsList from './CollectionsList';
+import Taskstodo from './Taskstodo';
 import BE from './BE';
 
 
@@ -78,7 +80,8 @@ class Home extends Component {
     return (
       <div className="Home" style={{ width: '75%', margin: 'auto' }}>
         <Header />
-        <FormBox handleSubmit={this.addTask} displayTasks={this.displayTasks} />
+        <CollectionsList />
+        <Taskstodo handleSubmit={this.addTask} displayTasks={this.displayTasks} />
         <Table className="table" textAlign="center" style={{ backgroundColor: 'white' }}>
           <Table.Header>
             <Table.Row>

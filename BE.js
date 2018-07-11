@@ -1,14 +1,13 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 
 const port = 'http://localhost:3001';
 class TasksList extends Component {
-  static async postTasks(newTask, collectionId) {
+  static async postTasks(newTask) {
     try {
       const response = await axios.post(`${port}/tasks`, {
         title: newTask,
         completed: false,
-        collection: collectionId,
       });
       console.log(response.data);
       return (response.data);
