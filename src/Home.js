@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Header from './Header';
 import BE from './BE';
 import UsersControl from './HandelingUsers'
+import UserTask from './UserTask'
 import CollectionsRoute from './Routing';
 
 
@@ -151,6 +152,7 @@ class Home extends Component {
             <Label color={task.userColor} horizontal>
               {task.username}
             </Label>
+            <UserTask />
           </Table.Cell>
           <Table.Cell>
             <input type="checkbox" onClick={() => this.doTask(index)} style={{ backgroundColor: '#00ffbf' }} />
